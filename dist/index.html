@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediBot | AI-Powered Smart Health Companion</title>
+  <meta name="description" content="Understand medical prescriptions, query drug interactions, analyze wellness data, and learn how health data is stored securely. Your trusted health partner.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230084FF'/%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='white'/%3E%3Cpath d='M51,60 C53,58 55,57 55,54' stroke='black' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='55' cy='54' r='1.5' fill='black'/%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='58' cy='41' r='5.5' fill='white'/%3E%3Crect x='51' y='48' width='14' height='20' rx='7' fill='white' mask='url(%23m)'/%3E%3Cpath d='M42,49 C40,46 36,44 36,40 C36,37 39,36 41,37' stroke='white' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='41' cy='37' r='1.5' fill='white'/%3E%3Cpath d='M42,49 C44,46 48,44 48,40 C48,37 45,36 43,37' stroke='white' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='43' cy='37' r='1.5' fill='white'/%3E%3Cpath d='M42,49 C34,56 38,68 45,66 C48,65 50,62 51,60' stroke='white' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+  
+  <!-- Stylesheet -->
+  <script type="module" crossorigin src="/assets/index-B-JW7-3J.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B64A1lUO.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="#home" class="logo" id="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; display: block;">
+            <defs>
+              <mask id="torso-mask-nav">
+                <rect x="0" y="0" width="100" height="100" fill="white" />
+                <path d="M 51,60 C 53,58 55,57 55,54" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <circle cx="55" cy="54" r="1.5" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="58" cy="41" r="5.5" fill="white" />
+            <rect x="51" y="48" width="14" height="20" rx="7" fill="white" mask="url(#torso-mask-nav)" />
+            <path d="M 42,49 C 40,46 36,44 36,40 C 36,37 39,36 41,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="41" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 44,46 48,44 48,40 C 48,37 45,36 43,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="43" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 34,56 38,68 45,66 C 48,65 50,62 51,60" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span>MediBot</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links" id="nav-menu">
+          <li><span class="nav-link active" data-target="home">Home</span></li>
+          <li><span class="nav-link" data-target="privacy">Privacy Policy</span></li>
+          <li><span class="nav-link" data-target="about">About</span></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center;">
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        
+        <div class="burger-menu" id="burger-btn">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content Container -->
+  <main class="container">
+    
+    <!-- 1. HOME PAGE -->
+    <section id="home-page" class="page-section active">
+      <div class="hero-section">
+        <span class="badge"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> Welcome to MediBot</span>
+        <h1 class="hero-title">Your Smart AI Health Companion</h1>
+        <p class="hero-subtitle">Ask questions about medications, get wellness guidance, and analyze medical reports instantly using advanced clinical intelligence.</p>
+      </div>
+
+      
+      <!-- Expanded Features Section -->
+      <div class="features-section">
+        <h2 class="section-title">MediBot Core Capabilities</h2>
+        <p class="section-subtitle">Explore the complete set of intelligent medical tools engineered for modern patient-first wellness.</p>
+        
+        <div class="features-grid">
+          
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="scan"></i></div>
+            <h4 class="feature-card-title">AI Prescription Scanning</h4>
+            <p class="feature-card-desc">Transform handwritten prescriptions into organized digital records. Automatically extract medicine names, dosages, and treatment instructions using AI-powered OCR technology.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="layout-dashboard"></i></div>
+            <h4 class="feature-card-title">Smart Medication Management</h4>
+            <p class="feature-card-desc">Manage medications from a centralized dashboard. Track schedules, monitor daily intake, configure reminders, and organize treatment plans efficiently.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="alarm-clock"></i></div>
+            <h4 class="feature-card-title">Medication Reminders & Adherence Tracking</h4>
+            <p class="feature-card-desc">Receive personalized medication alerts, track completed doses, monitor adherence progress, and maintain consistent treatment routines.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="droplet"></i></div>
+            <h4 class="feature-card-title">Blood Test Analysis & Health Insights</h4>
+            <p class="feature-card-desc">Upload blood test reports and receive AI-generated interpretations, simplified explanations, health trend analysis, and actionable insights.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="bot"></i></div>
+            <h4 class="feature-card-title">AI-Powered Health Assistant</h4>
+            <p class="feature-card-desc">Get instant guidance about prescriptions, medications, blood reports, and general wellness through MediBot, your intelligent healthcare companion.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="apple"></i></div>
+            <h4 class="feature-card-title">Nutrition & Wellness Recommendations</h4>
+            <p class="feature-card-desc">Receive personalized dietary recommendations, nutrition guidance, and health-focused suggestions based on medical insights.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="shield-check"></i></div>
+            <h4 class="feature-card-title">Prescription Safety & Validation</h4>
+            <p class="feature-card-desc">Improve medication safety through intelligent prescription analysis, medication validation, duplicate detection, and automated safety checks.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="activity"></i></div>
+            <h4 class="feature-card-title">BMI & Health Monitoring</h4>
+            <p class="feature-card-desc">Track BMI, monitor wellness indicators, and visualize health progress through intuitive health metrics and dashboards.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="folder-heart"></i></div>
+            <h4 class="feature-card-title">Medical Records Management</h4>
+            <p class="feature-card-desc">Store and manage prescriptions, blood reports, and medical documents securely with quick access to historical records.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="shield-alert"></i></div>
+            <h4 class="feature-card-title">Emergency Contact & Health Alerts</h4>
+            <p class="feature-card-desc">Maintain emergency contacts and enable critical health alert mechanisms for additional safety and support.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="bell"></i></div>
+            <h4 class="feature-card-title">Smart Notifications</h4>
+            <p class="feature-card-desc">Stay informed through medication reminders, health updates, and important healthcare notifications.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="trending-up"></i></div>
+            <h4 class="feature-card-title">Health Analytics & Progress Tracking</h4>
+            <p class="feature-card-desc">Monitor medication adherence, treatment progress, and long-term health trends through visual analytics.</p>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="home"></i></div>
+            <h4 class="feature-card-title">Personalized Dashboard</h4>
+            <p class="feature-card-desc">Access medications, reminders, health records, reports, and healthcare tools from a centralized dashboard experience.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Why Choose MediBot Section -->
+      <div class="features-section" style="margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border-color);">
+        <h2 class="section-title">Why Choose MediBot</h2>
+        <p class="section-subtitle">We build with clinical safety and patient empowerment at our core.</p>
+        
+        <div class="benefits-grid" style="margin-top: 40px;">
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="bot"></i></div>
+            <h4 class="benefit-title">AI-Powered Healthcare Assistance</h4>
+            <p class="benefit-desc">Instant conversational feedback regarding common prescriptions, lab values, and wellness guidelines from a clinical language assistant.</p>
+          </div>
+
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="eye"></i></div>
+            <h4 class="benefit-title">Simplified Medical Report Understanding</h4>
+            <p class="benefit-desc">No medical jargon. Convert blood test numbers and abbreviations into simple, plain-language insights you can discuss with doctors.</p>
+          </div>
+
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="check-circle"></i></div>
+            <h4 class="benefit-title">Better Medication Adherence</h4>
+            <p class="benefit-desc">Track streaks, configure notifications, and receive missed dose alerts to keep your treatment cycles consistent.</p>
+          </div>
+
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="sparkles"></i></div>
+            <h4 class="benefit-title">Personalized Health Recommendations</h4>
+            <p class="benefit-desc">Get customized wellness guidelines, dietary alerts, and exercise advice based on your diagnostic and physical metrics.</p>
+          </div>
+
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="shield"></i></div>
+            <h4 class="benefit-title">Secure Health Record Management</h4>
+            <p class="benefit-desc">Store medical documents in an encrypted vault. Enjoy complete data sovereignty with isolated local sandboxes.</p>
+          </div>
+
+          <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+            <div class="benefit-icon" style="margin: 0 0 16px 0; background-color: var(--primary-light); color: var(--primary);"><i data-lucide="smartphone"></i></div>
+            <h4 class="benefit-title">Modern User-Friendly Experience</h4>
+            <p class="benefit-desc">Enjoy a smooth, highly readable layout with single-click actions, light/dark themes, and quick-prompt templates.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Information We Take Section -->
+      <div class="features-section" style="margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--border-color);">
+        <h2 class="section-title">Information We Take</h2>
+        <p class="section-subtitle" style="margin-bottom: 40px;">Review the specific categories of data processed securely within our clinical ecosystem.</p>
+        
+        <div class="features-grid">
+          
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="user"></i></div>
+            <h4 class="feature-card-title">Personal Information</h4>
+            <ul style="list-style: disc; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+              <li>Full Name</li>
+              <li>Email Address</li>
+              <li>Password (or Google Sign-In Authentication)</li>
+              <li>Age</li>
+            </ul>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="contact"></i></div>
+            <h4 class="feature-card-title">Emergency Contact Information</h4>
+            <ul style="list-style: disc; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+              <li>Emergency Contact Name</li>
+              <li>Emergency Contact Number</li>
+              <li>Emergency Contact Email Address</li>
+            </ul>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="activity"></i></div>
+            <h4 class="feature-card-title">Medical Information</h4>
+            <ul style="list-style: disc; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+              <li>Prescription Records</li>
+              <li>Blood Test Reports</li>
+              <li>Medication Schedules</li>
+              <li>Medication History</li>
+              <li>Uploaded Medical Documents</li>
+              <li>Health Tracking Information</li>
+            </ul>
+          </div>
+
+          <div class="glass-card feature-card">
+            <div class="feature-icon-wrapper"><i data-lucide="database"></i></div>
+            <h4 class="feature-card-title">Account Information</h4>
+            <ul style="list-style: disc; padding-left: 20px; font-size: 0.85rem; color: var(--text-muted); margin-top: 8px;">
+              <li>Profile Image (Optional)</li>
+              <li>Login Activity</li>
+              <li>Device Information</li>
+            </ul>
+          </div>
+
+        </div>
+        
+        <p style="text-align: center; margin-top: 32px; font-size: 0.9rem; color: var(--text-muted); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; font-style: italic;">
+          "Your information is collected solely to provide medication management, medical document analysis, health tracking, and emergency support features within Medi-Scan."
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. PRIVACY POLICY PAGE -->
+    <section id="privacy-page" class="page-section">
+      <div class="privacy-container">
+        <div class="privacy-header-panel">
+          <span class="badge"><i data-lucide="shield" style="width:14px;height:14px;"></i> Secure Sandbox</span>
+          <h1 class="hero-title">Your Medical Privacy & Data Safety</h1>
+          <p class="hero-subtitle">We prioritize data sovereignty. Learn how we handle document analysis, retention periods, and your healthcare privacy rights.</p>
+          
+          <div class="privacy-search-wrapper">
+            <i data-lucide="search" class="privacy-search-icon"></i>
+            <input type="text" class="privacy-search-input" id="privacy-search" placeholder="Search privacy topics (e.g., encryption, storage)...">
+          </div>
+        </div>
+
+        <div class="privacy-layout">
+          <!-- Left: Policies Document Flow -->
+          <div class="glass-card policy-document" id="privacy-policy-flow">
+            
+            <div class="policy-section" data-search-keys="introduction privacy policy mobile website services bot companion description last updated april 2025">
+              <p style="font-style: italic; color: var(--text-muted); margin-bottom: 20px;">Last updated: April 2025</p>
+              <h3 class="policy-section-title">1. Introduction</h3>
+              <div class="policy-section-content">
+                <p>Mediscann ("we", "our", or "us") is committed to protecting your personal health information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application. By using Mediscann, you agree to the collection and use of information as described in this policy.</p>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="information we collect personal identifiers name email age health information prescription images blood test reports bmi data medication schedules usage data scan history app activity device identifiers profile image optional emergency contact details">
+              <h3 class="policy-section-title">2. Information We Collect</h3>
+              <div class="policy-section-content">
+                <p>We collect the following types of information:</p>
+                <ul>
+                  <li>Personal identifiers: name, email address, age</li>
+                  <li>Health information: prescription images, blood test reports, BMI data, medication schedules</li>
+                  <li>Usage data: scan history, app activity, device identifiers</li>
+                  <li>Profile image (optional)</li>
+                  <li>Emergency contact details (optional)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="how we use your information analyze interpret medical documents using AI send medication reminders health alerts maintain personal health records improve our services develop new features">
+              <h3 class="policy-section-title">3. How We Use Your Information</h3>
+              <div class="policy-section-content">
+                <p>We use the information we collect to:</p>
+                <ul>
+                  <li>Analyze and interpret your medical documents using AI</li>
+                  <li>Send medication reminders and health alerts</li>
+                  <li>Maintain your personal health records</li>
+                  <li>Improve our services and develop new features</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="health data and hipaa sensitive health information security measures encryption transit tls at rest aws infrastructure access controls sell third parties AI analysis advertising">
+              <h3 class="policy-section-title">4. Health Data and HIPAA</h3>
+              <div class="policy-section-content">
+                <p>Mediscann handles sensitive health information. We implement industry-standard security measures including encryption in transit (TLS) and at rest. Health data is stored on AWS infrastructure with access controls. We do not sell your health data to third parties. AI analysis of your medical documents is performed to provide the service you request and is not used for advertising.</p>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="data storage and retention secure aws servers united states active active delete account profile settings 30 days legal retention requirements">
+              <h3 class="policy-section-title">5. Data Storage and Retention</h3>
+              <div class="policy-section-content">
+                <p>Your data is stored on secure AWS servers located in the United States. We retain your personal data for as long as your account is active or as needed to provide services. You may request deletion of your data at any time through the "Delete Account" option in your profile settings. Upon deletion, we will remove your data from active systems within 30 days, subject to legal retention requirements.</p>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="data sharing sell trade rent personal information aws cloud infrastructure provider google gemini openrouter AI analysis document content personal identifiers law enforcement">
+              <h3 class="policy-section-title">6. Data Sharing</h3>
+              <div class="policy-section-content">
+                <p>We do not sell, trade, or rent your personal information. We may share data with:</p>
+                <ul>
+                  <li>AWS (cloud infrastructure provider)</li>
+                  <li>Google Gemini / OpenRouter (AI analysis — document content only, not personal identifiers)</li>
+                  <li>Law enforcement if required by law</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="your rights access personal data correct inaccurate request deletion erasure withdraw consent lodge complaint local data protection authority">
+              <h3 class="policy-section-title">7. Your Rights</h3>
+              <div class="policy-section-content">
+                <p>You have the right to:</p>
+                <ul>
+                  <li>Access the personal data we hold about you</li>
+                  <li>Correct inaccurate personal data</li>
+                  <li>Request deletion of your personal data (Right to Erasure)</li>
+                  <li>Withdraw consent at any time</li>
+                  <li>Lodge a complaint with your local data protection authority</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="third party services integrates third-party aws cognito authentication google sign-in social login privacy policies review">
+              <h3 class="policy-section-title">8. Third-Party Services</h3>
+              <div class="policy-section-content">
+                <p>Mediscann integrates with third-party services including AWS Cognito for authentication and Google Sign-In for social login. These services have their own privacy policies which we encourage you to review.</p>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="childrens privacy children under age 13 collect personal information contact immediately">
+              <h3 class="policy-section-title">9. Children's Privacy</h3>
+              <div class="policy-section-content">
+                <p>Mediscann is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided us with personal information, please contact us immediately.</p>
+              </div>
+            </div>
+
+            <div class="policy-section" data-search-keys="changes to this policy update periodically significant changes notify users appropriate channels effective date top document">
+              <h3 class="policy-section-title">10. Changes to This Policy</h3>
+              <div class="policy-section-content">
+                <p>We may update this Privacy Policy from time to time. If we make significant changes, we will notify users through appropriate channels. The updated policy will be effective from the date shown at the top of this document.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT PAGE -->
+    <section id="about-page" class="page-section">
+      <div class="about-hero">
+        <span class="badge"><i data-lucide="info" style="width:14px;height:14px;"></i> Empowering Health Literacy</span>
+        <h1 class="hero-title">A Smarter Health Companion</h1>
+        <p class="hero-subtitle" style="margin-bottom: 20px;">MediBot bridges the gap between complex clinical data and patients. We use advanced language models to offer secure, conversational clarity on health queries.</p>
+        <p style="font-size: 1.1rem; color: var(--text-main); max-width: 800px; margin: 0 auto 30px auto; line-height: 1.7; font-weight: 500;">
+          MediBot is an AI-powered healthcare companion designed to help users understand medical documents, manage medications, monitor health progress, and access intelligent health insights through advanced AI technologies.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Mission and Vision Cards -->
+        <div class="about-intro-grid">
+          <div class="glass-card intro-card">
+            <h3 class="intro-card-title">
+              <div class="intro-card-icon"><i data-lucide="target"></i></div>
+              <span>Mission</span>
+            </h3>
+            <p style="color:var(--text-muted)">Healthcare terminology can feel like a foreign language. Our mission is to democratize health literacy by breaking down prescriptions, medication functions, and clinical measurements into clear, friendly, and structured layperson explanations. We aim to support patients in feeling informed, prepared, and active in their wellness journey.</p>
+          </div>
+          <div class="glass-card intro-card">
+            <h3 class="intro-card-title">
+              <div class="intro-card-icon"><i data-lucide="eye"></i></div>
+              <span>Vision</span>
+            </h3>
+            <p style="color:var(--text-muted)">We envision a future where patient care is backed by transparent, understandable, and instant digital assistants. By collaborating with clinicians and focusing strictly on medical document privacy, MediBot aims to become an industry standard for secure patient-facing health AI, fostering stronger relationships between patients and physicians.</p>
+          </div>
+        </div>
+
+        <!-- What We Offer -->
+        <div class="benefits-section" style="margin-top: 40px;">
+          <h2 class="section-title">What We Offer</h2>
+          <p class="section-subtitle">Empowering your health journey with advanced, privacy-first digital tools.</p>
+          
+          <div class="benefits-grid">
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="scan"></i></div>
+              <h4 class="benefit-title">AI Prescription Scanning</h4>
+              <p class="benefit-desc">Digitize printed or handwritten scripts automatically using precision OCR engines.</p>
+            </div>
+            
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="droplet"></i></div>
+              <h4 class="benefit-title">Blood Test Analysis</h4>
+              <p class="benefit-desc">Translate complex lab biomarkers and values into clear layperson descriptions.</p>
+            </div>
+
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="calendar-check"></i></div>
+              <h4 class="benefit-title">Medication Tracking</h4>
+              <p class="benefit-desc">Log your therapeutic history, schedule reminders, and track overall adherence.</p>
+            </div>
+
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="activity"></i></div>
+              <h4 class="benefit-title">Health Monitoring</h4>
+              <p class="benefit-desc">Log and track BMI, weight values, and vital physiological markers over time.</p>
+            </div>
+
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="sparkles"></i></div>
+              <h4 class="benefit-title">Personalized Wellness Insights</h4>
+              <p class="benefit-desc">Receive nutritional, dietary, and basic wellness logs adapted to your health metrics.</p>
+            </div>
+
+            <div class="glass-card benefit-card">
+              <div class="benefit-icon"><i data-lucide="bot"></i></div>
+              <h4 class="benefit-title">AI Health Assistance</h4>
+              <p class="benefit-desc">Discuss prescriptions, medical terminology, and report details instantly with MediBot.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Commitment -->
+        <div class="glass-card innovation-section" style="padding: 32px; display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+          <h3 style="display: flex; align-items: center; gap: 12px; font-size: 1.4rem; color: var(--text-main);">
+            <div class="intro-card-icon" style="background-color: var(--primary-light); color: var(--primary); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin: 0;">
+              <i data-lucide="heart"></i>
+            </div>
+            <span>Our Commitment</span>
+          </h3>
+          <p style="color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;">
+            We are committed to making healthcare information easier to understand while helping users stay organized, informed, and proactive about their health.
+          </p>
+        </div>
+
+        <!-- What Information We Store Section -->
+        <div class="benefits-section" style="margin-top: 40px;">
+          <h2 class="section-title">What Information We Store</h2>
+          <p class="section-subtitle">We transparently disclose the records cached to facilitate your digital healthcare tracking.</p>
+          
+          <div class="benefits-grid">
+            <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+              <div class="benefit-icon" style="margin: 0 0 16px 0;"><i data-lucide="user"></i></div>
+              <h4 class="benefit-title">Personal Information</h4>
+              <ul style="list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                <li>Full Name</li>
+                <li>Email Address</li>
+                <li>Age</li>
+              </ul>
+            </div>
+            
+            <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+              <div class="benefit-icon" style="margin: 0 0 16px 0;"><i data-lucide="contact"></i></div>
+              <h4 class="benefit-title">Emergency Contact</h4>
+              <ul style="list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                <li>Contact Name</li>
+                <li>Contact Number</li>
+                <li>Contact Email</li>
+              </ul>
+            </div>
+
+            <div class="glass-card benefit-card" style="text-align: left; padding: 24px;">
+              <div class="benefit-icon" style="margin: 0 0 16px 0;"><i data-lucide="activity"></i></div>
+              <h4 class="benefit-title">Medical Records</h4>
+              <ul style="list-style: disc; padding-left: 20px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                <li>Prescription History</li>
+                <li>Blood Test Reports</li>
+                <li>Medication Schedules</li>
+                <li>Health Tracking Data</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 24px; margin-top: 24px;">
+            <h4 class="benefit-title" style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600;">
+              <i data-lucide="heart" style="color: var(--primary);"></i>
+              <span>Why We Collect This Information</span>
+            </h4>
+            <ul style="list-style: disc; padding-left: 20px; font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;">
+              <li>To analyze prescriptions and medical reports using AI</li>
+              <li>To provide medication reminders</li>
+              <li>To maintain medical history records</li>
+              <li>To provide emergency health support</li>
+              <li>To generate personalized health insights</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- How Medi-Scan Works Section -->
+        <div class="timeline-section" style="margin-top: 60px;">
+          <h2 class="section-title">How Medi-Scan Works</h2>
+          <p class="section-subtitle">Discover our streamlined, AI-assisted path to health literacy and medication compliance.</p>
+          
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Step 01</div>
+              <h4 class="timeline-title">Upload prescriptions or blood reports</h4>
+              <p class="timeline-desc">Securely scan printed prescriptions, handwritten logs, or blood report sheets using our smart clinical OCR scanner.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Step 02</div>
+              <h4 class="timeline-title">AI extracts and analyzes medical information</h4>
+              <p class="timeline-desc">Our integrated AI parses medication dosages, timing codes, safety thresholds, and physiological markers into plain language summaries.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Step 03</div>
+              <h4 class="timeline-title">Users receive medication reminders</h4>
+              <p class="timeline-desc">MediBot schedules local notifications, smart compliance streak indicators, and missed-dose contacts alert structures.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Step 04</div>
+              <h4 class="timeline-title">MediBot provides health guidance</h4>
+              <p class="timeline-desc">Ask follow-up questions, request dietary tips, clarify pharmacy abbreviations, and receive context-aware guidance.</p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">Step 05</div>
+              <h4 class="timeline-title">Medical records are securely maintained for future reference</h4>
+              <p class="timeline-desc">All digitized health records, logs, and report archives remain safely stored in your local clinical vault.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact & Support Form Section -->
+        <div class="contact-section">
+          <!-- Info Details -->
+          <div class="contact-info">
+            <div class="glass-card contact-info-card">
+              <h3 class="contact-info-title">MediBot Headquarters</h3>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Have questions about our technology or privacy protocols? Get in touch with our team directly.</p>
+              
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-item-icon"><i data-lucide="mail"></i></div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">General & Security Inquiries</span>
+                    <span class="contact-item-value">support@medibot.io</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon"><i data-lucide="phone"></i></div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">Telephone Support</span>
+                    <span class="contact-item-value">+1 (800) 555-MEDI</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon"><i data-lucide="map-pin"></i></div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">Digital Health Hub</span>
+                    <span class="contact-item-value">Suite 404, San Francisco, CA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Panel -->
+          <div class="glass-card">
+            <h3 style="margin-bottom: 20px;">Send a Message</h3>
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name</label>
+                  <input type="text" id="contact-name" class="form-input" placeholder="Jane Doe" required>
+                  <span class="error-message" id="error-name">Name is required</span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address</label>
+                  <input type="email" id="contact-email" class="form-input" placeholder="jane@example.com" required>
+                  <span class="error-message" id="error-email">Please enter a valid email address</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="Feedback or Question" required>
+                <span class="error-message" id="error-subject">Subject is required</span>
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message Details</label>
+                <textarea id="contact-message" class="form-input" placeholder="Type your inquiry here..." required></textarea>
+                <span class="error-message" id="error-message">Message details are required</span>
+              </div>
+              <button type="submit" class="submit-btn" id="contact-submit-btn">
+                <span>Submit Inquiry</span>
+                <i data-lucide="send" style="width:16px;height:16px;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; display: block;">
+            <defs>
+              <mask id="torso-mask-footer">
+                <rect x="0" y="0" width="100" height="100" fill="white" />
+                <path d="M 51,60 C 53,58 55,57 55,54" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <circle cx="55" cy="54" r="1.5" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="58" cy="41" r="5.5" fill="white" />
+            <rect x="51" y="48" width="14" height="20" rx="7" fill="white" mask="url(#torso-mask-footer)" />
+            <path d="M 42,49 C 40,46 36,44 36,40 C 36,37 39,36 41,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="41" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 44,46 48,44 48,40 C 48,37 45,36 43,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="43" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 34,56 38,68 45,66 C 48,65 50,62 51,60" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span>MediBot</span>
+      </div>
+      <p>&copy; 2026 MediBot Solutions. All rights reserved. Data processed in secured local environments.</p>
+      <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.8;">Disclaimer: MediBot provides educational insights. MediBot does not provide official medical diagnoses. Always consult a qualified physician for medical decisions.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-notification">
+    <i data-lucide="check-circle" class="toast-icon"></i>
+    <span class="toast-message" id="toast-text">Message sent successfully!</span>
+  </div>
+
+  <!-- Lucide Icon Library -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- JavaScript Controller -->
+</body>
+</html>

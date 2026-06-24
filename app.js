@@ -136,13 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
         tags: ["hypertension", "blood pressure", "bp", "cardio", "heart"]
       },
       hello: {
-        answer: "Hello! I am MediBot, your AI health companion. I can help clarify prescription terminology, discuss medication guidelines, check basic interactions, and supply general wellness tips. How can I help you today?",
+        answer: "Hello! I am Medipocket, your AI health companion. I can help clarify prescription terminology, discuss medication guidelines, check basic interactions, and supply general wellness tips. How can I help you today?",
         tags: ["hello", "hi", "hey", "greetings"]
       }
     };
 
     // Pre-load Bot Greeting
-    addChatMessage("bot", "Hello! I'm MediBot, your smart health companion. Ask me about prescription abbreviations, medication functions, or wellness tips. (e.g. <em>'What is Metformin?'</em> or <em>'How do I improve sleep?'</em>)");
+    addChatMessage("bot", "Hello! I'm Medipocket, your smart health companion. Ask me about prescription abbreviations, medication functions, or wellness tips. (e.g. <em>'What is Metformin?'</em> or <em>'How do I improve sleep?'</em>)");
 
     function addChatMessage(sender, text) {
       const msgDiv = document.createElement('div');

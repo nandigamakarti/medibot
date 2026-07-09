@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medipocket | Delete Account</title>
+  <meta name="description" content="Information on how to delete your Medipocket account.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230084FF'/%3E%3Cdefs%3E%3Cmask id='m'%3E%3Crect width='100' height='100' fill='white'/%3E%3Cpath d='M51,60 C53,58 55,57 55,54' stroke='black' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='55' cy='54' r='1.5' fill='black'/%3E%3C/mask%3E%3C/defs%3E%3Ccircle cx='58' cy='41' r='5.5' fill='white'/%3E%3Crect x='51' y='48' width='14' height='20' rx='7' fill='white' mask='url(%23m)'/%3E%3Cpath d='M42,49 C40,46 36,44 36,40 C36,37 39,36 41,37' stroke='white' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='41' cy='37' r='1.5' fill='white'/%3E%3Cpath d='M42,49 C44,46 48,44 48,40 C48,37 45,36 43,37' stroke='white' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='43' cy='37' r='1.5' fill='white'/%3E%3Cpath d='M42,49 C34,56 38,68 45,66 C48,65 50,62 51,60' stroke='white' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/styles.css">
+  
+  <style>
+    .static-page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .static-page-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text-color);
+      text-align: center;
+    }
+    .static-page-content h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+    .static-page-content p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+    .static-page-content ul, .static-page-content ol {
+      margin-bottom: 20px;
+      padding-left: 25px;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    .static-page-content li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <div class="container navbar">
+      <a href="/" class="logo" id="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; display: block;">
+            <defs>
+              <mask id="torso-mask-nav">
+                <rect x="0" y="0" width="100" height="100" fill="white" />
+                <path d="M 51,60 C 53,58 55,57 55,54" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <circle cx="55" cy="54" r="1.5" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="58" cy="41" r="5.5" fill="white" />
+            <rect x="51" y="48" width="14" height="20" rx="7" fill="white" mask="url(#torso-mask-nav)" />
+            <path d="M 42,49 C 40,46 36,44 36,40 C 36,37 39,36 41,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="41" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 44,46 48,44 48,40 C 48,37 45,36 43,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="43" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 34,56 38,68 45,66 C 48,65 50,62 51,60" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span>Medipocket</span>
+      </a>
+      
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link" style="text-decoration:none; color:inherit;">Home</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center;">
+        <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content Container -->
+  <main class="container">
+    <div class="static-page-container">
+      <h1 class="static-page-title">Delete Account</h1>
+      
+      <div class="static-page-content glass-card" style="padding: 40px; margin-top: 20px;">
+        <h3>What data is deleted?</h3>
+        <p>When your account is deleted, we permanently remove:</p>
+        <ul>
+          <li>Profile information</li>
+          <li>Personal details</li>
+          <li>Medical records stored in your account</li>
+          <li>Uploaded documents</li>
+          <li>App preferences</li>
+        </ul>
+
+        <h3>How to delete your account</h3>
+        <p>Users can delete their account from the Medipocket app by following this flow:</p>
+        <ol>
+          <li>Open the Medipocket app.</li>
+          <li>Go to <strong>Profile</strong>.</li>
+          <li>Select <strong>Delete Account</strong>.</li>
+          <li>Select <strong>Delete My Account</strong>.</li>
+          <li>Confirm the deletion request.</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; display: block;">
+            <defs>
+              <mask id="torso-mask-footer">
+                <rect x="0" y="0" width="100" height="100" fill="white" />
+                <path d="M 51,60 C 53,58 55,57 55,54" stroke="black" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <circle cx="55" cy="54" r="1.5" fill="black" />
+              </mask>
+            </defs>
+            <circle cx="58" cy="41" r="5.5" fill="white" />
+            <rect x="51" y="48" width="14" height="20" rx="7" fill="white" mask="url(#torso-mask-footer)" />
+            <path d="M 42,49 C 40,46 36,44 36,40 C 36,37 39,36 41,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="41" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 44,46 48,44 48,40 C 48,37 45,36 43,37" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <circle cx="43" cy="37" r="1.5" fill="white" />
+            <path d="M 42,49 C 34,56 38,68 45,66 C 48,65 50,62 51,60" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+          </svg>
+        </div>
+        <span>Medipocket</span>
+      </div>
+      <p>&copy; 2026 Medipocket Solutions. All rights reserved. Data processed in secured local environments.</p>
+      <p style="margin-top: 8px; font-size: 0.75rem; opacity: 0.8;">Disclaimer: Medipocket provides educational insights. Medipocket does not provide official medical diagnoses. Always consult a qualified physician for medical decisions.</p>
+    </div>
+  </footer>
+
+  <!-- Lucide Icon Library -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <script>
+    lucide.createIcons();
+    
+    // Simple theme toggler for the static page
+    const themeBtn = document.getElementById('theme-btn');
+    const htmlEl = document.documentElement;
+    
+    // Check saved theme
+    const savedTheme = localStorage.getItem('medipocket-theme') || 'light';
+    htmlEl.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      htmlEl.setAttribute('data-theme', newTheme);
+      localStorage.setItem('medipocket-theme', newTheme);
+      
+      updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+      const icon = themeBtn.querySelector('i');
+      if (theme === 'dark') {
+        icon.setAttribute('data-lucide', 'sun');
+      } else {
+        icon.setAttribute('data-lucide', 'moon');
+      }
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

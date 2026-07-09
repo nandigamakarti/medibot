@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const target = e.currentTarget.getAttribute('data-target');
-      navigateTo(target);
+      if (target) {
+        navigateTo(target);
+      }
     });
   });
 

@@ -196,6 +196,7 @@ button {
   border-radius: var(--radius-full);
   color: var(--text-muted);
   cursor: pointer;
+  text-decoration: none;
   transition: all var(--transition-fast);
 }
 

@@ -12,41 +12,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/styles.css">
   
-  <style>
-    .static-page-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px 80px;
-    }
-    .static-page-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 30px;
-      color: var(--text-color);
-      text-align: center;
-    }
-    .static-page-content h3 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      color: var(--primary-color);
-    }
-    .static-page-content p {
-      line-height: 1.6;
-      margin-bottom: 15px;
-      color: var(--text-color);
-    }
-    .static-page-content ul, .static-page-content ol {
-      margin-bottom: 20px;
-      padding-left: 25px;
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-    .static-page-content li {
-      margin-bottom: 10px;
-    }
-  </style>
+
 </head>
 <body>
 
@@ -76,8 +42,11 @@
       </a>
       
       <nav>
-        <ul class="nav-links">
-          <li><a href="/" class="nav-link" style="text-decoration:none; color:inherit;">Home</a></li>
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="/#home" class="nav-link">Home</a></li>
+          <li><a href="/#privacy" class="nav-link">Privacy Policy</a></li>
+          <li><a href="/#about" class="nav-link">About</a></li>
+          <li><a href="/delete-account.html" class="nav-link active">Delete Account</a></li>
         </ul>
       </nav>
 
@@ -85,37 +54,62 @@
         <button class="theme-toggle" id="theme-btn" aria-label="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
+        
+        <div class="burger-menu" id="burger-btn">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Page Content Container -->
   <main class="container">
-    <div class="static-page-container">
-      <h1 class="static-page-title">Delete Account</h1>
-      
-      <div class="static-page-content glass-card" style="padding: 40px; margin-top: 20px;">
-        <h3>What data is deleted?</h3>
-        <p>When your account is deleted, we permanently remove:</p>
-        <ul>
-          <li>Profile information</li>
-          <li>Personal details</li>
-          <li>Medical records stored in your account</li>
-          <li>Uploaded documents</li>
-          <li>App preferences</li>
-        </ul>
+    <section class="page-section active" style="margin-top: 40px; margin-bottom: 80px;">
+      <div class="privacy-container">
+        
+        <div class="privacy-header-panel" style="text-align: center; max-width: 800px; margin: 0 auto 40px auto;">
+          <h1 class="hero-title">Delete Account</h1>
+          <p class="hero-subtitle">Information on how to delete your Medipocket account and what data is removed.</p>
+        </div>
 
-        <h3>How to delete your account</h3>
-        <p>Users can delete their account from the Medipocket app by following this flow:</p>
-        <ol>
-          <li>Open the Medipocket app.</li>
-          <li>Go to <strong>Profile</strong>.</li>
-          <li>Select <strong>Delete Account</strong>.</li>
-          <li>Select <strong>Delete My Account</strong>.</li>
-          <li>Confirm the deletion request.</li>
-        </ol>
+        <div class="privacy-layout" style="display: block; max-width: 800px; margin: 0 auto;">
+          <div class="glass-card policy-document">
+            
+            <div class="policy-section">
+              <h3 class="policy-section-title">What data is deleted?</h3>
+              <div class="policy-section-content">
+                <p>When your account is deleted, we permanently remove:</p>
+                <ul style="padding-left: 20px; margin-bottom: 20px;">
+                  <li>Profile information</li>
+                  <li>Personal details</li>
+                  <li>Medical records stored in your account</li>
+                  <li>Uploaded documents</li>
+                  <li>App preferences</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="policy-section">
+              <h3 class="policy-section-title">How to delete your account</h3>
+              <div class="policy-section-content">
+                <p>Users can delete their account from the Medipocket app by following this flow:</p>
+                <ol style="padding-left: 20px; margin-bottom: 20px;">
+                  <li>Open the Medipocket app.</li>
+                  <li>Go to <strong>Profile</strong>.</li>
+                  <li>Select <strong>Delete Account</strong>.</li>
+                  <li>Select <strong>Delete My Account</strong>.</li>
+                  <li>Confirm the deletion request.</li>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- Global Footer -->
@@ -158,7 +152,7 @@
     const htmlEl = document.documentElement;
     
     // Check saved theme
-    const savedTheme = localStorage.getItem('medipocket-theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     htmlEl.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
     
@@ -167,20 +161,27 @@
       const newTheme = currentTheme === 'light' ? 'dark' : 'light';
       
       htmlEl.setAttribute('data-theme', newTheme);
-      localStorage.setItem('medipocket-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
       
       updateThemeIcon(newTheme);
     });
     
     function updateThemeIcon(theme) {
-      const icon = themeBtn.querySelector('i');
       if (theme === 'dark') {
-        icon.setAttribute('data-lucide', 'sun');
+        themeBtn.innerHTML = '<i data-lucide="sun"></i>';
       } else {
-        icon.setAttribute('data-lucide', 'moon');
+        themeBtn.innerHTML = '<i data-lucide="moon"></i>';
       }
       lucide.createIcons();
     }
+
+    // Mobile menu toggle
+    const burgerBtn = document.getElementById('burger-btn');
+    const navMenu = document.getElementById('nav-menu');
+    
+    burgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('mobile-open');
+    });
   </script>
 </body>
 </html>
